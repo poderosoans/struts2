@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <constant name="struts.custom.i18n.resources" value="global" />
+    
+    <package name="default" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" 
+                         class="org.apache.struts2.views.tiles.TilesResult"/>
+        </result-types>
+        
+        <action name="inicio" class="pe.edu.cibertec.action.UsuarioAction" method="inicio">
+            <result name="login">/seguridad/login.jsp</result>
+        </action>
+        
+        <action name="login" 
+                class="pe.edu.cibertec.action.UsuarioAction" 
+                method="login">
+            <result type="tiles">d_principal</result>
+            <result name="login">/seguridad/login.jsp</result>
+            <result name="input">/seguridad/login.jsp</result>
+        </action>
+        
+        <action name="logout" 
+                 class="pe.edu.cibertec.action.UsuarioAction" 
+                 method="logout">
+            <result name="login">/seguridad/login.jsp</result>
+        </action>
+        
+        <action name="listar" 
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="listar">
+            <result type="tiles">d_listarClientes</result>
+        </action>
+        
+        <action name="updateClient" 
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="modificar">
+            <result type="tiles">d_listarClientes</result>
+        </action>
+        
+        <action name="editClient" 
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="editar">
+            <result type="tiles">d_nuevoCliente</result>
+        </action>
+        
+        <action name="deleteClient" 
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="eliminar">
+            <result name="success" type="redirect">listar</result>
+        </action>
+        
+        <action name="inicializarCliente" 
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="inicializar">
+            <result type="tiles">d_nuevoCliente</result>
+        </action>
+         <action name="registrarCliente"  
+                 class="pe.edu.cibertec.action.ClienteAction" 
+                 method="registrar">
+            <result type="tiles">d_resultadoCliente</result>
+            <result name="input" type="tiles">d_nuevoCliente</result>
+        </action>
+    </package>
+
+</struts>
