@@ -25,6 +25,10 @@
             <result name="input">/seguridad/login.jsp</result>
         </action>
         
+        <action name="principal">
+            <result type="tiles">d_principal</result>
+        </action>
+        
         <action name="logout" 
                  class="pe.edu.cibertec.action.UsuarioAction" 
                  method="logout">

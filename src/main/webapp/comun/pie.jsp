@@ -1,5 +1,3 @@
-<table style="width: 780px; border: none">
-  <tr align="center" bgcolor="#677777">
-    <td>CIBERTEC</td>
-  </tr>  
-</table>
+<footer class="footer text-right">
+    <%= new java.util.Date().getYear() + 1900 %> © Roger Pomacarhua
+</footer>

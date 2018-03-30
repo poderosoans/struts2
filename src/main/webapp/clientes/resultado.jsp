@@ -5,35 +5,62 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Resultado</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-title-box">
+                <h4 class="page-title">
+                    <s:text name="titulo.resultado"/>
+                </h4>
+                <ol class="breadcrumb p-0 m-0">
+                    <li>
+                        <s:url action="principal" id="principal"/>
+                        <s:a href="%{principal}">
+                            <s:text name="enlace.menu.inicio"/>
+                        </s:a>
+                    </li>
+                    <li>
+                        <s:url action="listar" id="listar"/>
+                        <s:a href="%{listar}" class="waves-effect">
+                            <s:text name="enlace.listar.cliente"/>
+                        </s:a>
+                    </li>
+
+                    <li class="active">
+                        <s:text name="titulo.resultado"/>
+                    </li>
+                </ol>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row">
+
         
-        <p style="width: 400px">
             <s:if test="cliente.codigo != 0">
-                <s:text name="nuevo.resultado.actualiza"/>
+                <div class="alert alert-warning" role="alert">
+                    <p class="alert-color"><s:text name="nuevo.resultado.actualiza"/></p>
+                </div>
             </s:if>
             <s:else>
-                <s:text name="nuevo.resultado.nuevo"/>
+                <div class="alert alert-success" role="alert">
+                    <p class="alert-color"><s:text name="nuevo.resultado.nuevo"/></p>
+                </div>
             </s:else>
-        </p>
         
-        <s:if test="cliente.codigo == 0 && cliente.publicidad == true">
-            <p> <s:text name="nuevo.aviso"/></p>
-        </s:if>
-       
 
-            <hr/>
-            
+            <s:if test="cliente.codigo == 0 && cliente.publicidad == true">
+                <div class="alert alert-info" role="alert">
+                    <p class="alert-color"><s:text name="nuevo.aviso"/></p>
+                </div>
+            </s:if>
+        <hr/>
 
+        <s:debug/>
+    </div>
+    <!-- end row -->
 
-            
-            <s:debug/>
-    </body>
-</html>
+</div> <!-- container -->

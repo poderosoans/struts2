@@ -7,18 +7,27 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1><s:text name="titulo.principal"/></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-title-box">
+                <h4 class="page-title"><s:text name="enlace.listar.panel"/></h4>
+                <ol class="breadcrumb p-0 m-0">
+                    <li class="active">
+                        <s:text name="enlace.listar.panel"/>
+                    </li>
+                </ol>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end row -->
+
+    <div class="row">
+
         
-        <p style="width: 400px">
-            <s:text name="titulo.bienvenida"/>
-        </p>
 
+    </div>
+    <!-- end row -->
 
-    </body>
-</html>
+</div> <!-- container -->
