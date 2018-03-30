@@ -1,6 +1,6 @@
 # CRUD Struts 2
 
-Create, Read, Update and Delete CRUD Example
+Create, Read, Update and Delete CRUD multi-language (i18n) example
 
 ## Built With
 
